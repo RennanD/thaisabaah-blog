@@ -5,3 +5,4 @@
 # Name of your virtuan env
 .env
 *pyc
+.DB_Store
