@@ -1,0 +1,93 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<title>Blog | Update</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%} ">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+
+        </div>
+        <div class="w3-container">
+        	<h1 class="w3-margin-right"><b>  Dashboard</b></h1>
+          <p><a href="{% url 'post_list'%}"><i class="fa fa-paper-plane-o w3-margin-right w3-large w3-text-teal"></a></i>Ver Blog</p>
+          <p><a href="{% url 'dashboard'%}"><i class="fa fa-folder-open-o w3-margin-right w3-large w3-text-teal"></i></a>Gerenciar Posts</p>
+          <p><a href="{% url 'logout'%}"><i class="fa fa fa-power-off w3-margin-right w3-large w3-text-teal"></a></i>Sair</p>
+          <hr>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+      	<br>
+    <form class="w3-container w3-card-4" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <br>
+        <p>      
+          <label class="w3-text-grey">Título</label>
+          <input class="w3-input w3-border" type="text" required="" name="title" value="{{posts.title}}">
+        </p>
+        <p>      
+          <label class="w3-text-grey">Descrição</label>
+          <textarea class="w3-input w3-border" style="resize:none" name = "desc" value = >{{posts.desc}}</textarea>
+        </p>
+        <p>      
+          <label class="w3-text-grey">Texto</label>
+          <textarea class="w3-input w3-border" style="resize:none" name = "text">{{posts.text}}</textarea>
+        </p>
+        <br>
+         <p>
+            <button class="w3-btn w3-padding w3-teal" style="width:120px" type="submit">Postar &nbsp; ❯</button>
+         </p>
+    </form>
+    <br><br>
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+    </div>
+  
+  <!-- End Page Container -->
+  </div><br><br><br><br><br><br>
+
+    <footer class="footer w3-teal">
+      <div class="container">
+          <div class="row">
+            <div class="col-md"></div>
+
+            <div class="col-md">
+                <span class="text-muted w3-display-middle">Sistema em Django 2.x</span>
+            </div>
+            
+            <div class="col-md"></div>
+          </div>
+        
+      </div>
+    </footer>
+
+</body>
+</html>

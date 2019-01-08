@@ -1,0 +1,21 @@
+<div class="w3-bar">
+    {% if page.has_other_pages %}
+            {% if page.has_previous %}
+                    <a href="?page={{page.previous_page_number}}" class="w3-button w3-teal w3-padding-large w3-margin-bottom">Previous</a>
+            {% else %}
+                    <span class="w3-button w3-teal w3-disabled w3-padding-large w3-margin-bottom">Previous</span>
+                
+            {%endif%}
+
+            {% if page.has_next %}
+                
+                    <a href="?page={{page.next_page_number}}" class="w3-button w3-teal w3-padding-large w3-margin-bottom">Next</a>
+                
+            {% else %}
+                
+                    <span class="w3-button w3-teal w3-disabled w3-padding-large w3-margin-bottom">Next</span>
+                
+            {% endif %}
+        </u>
+    {%endif%}
+</div>
