@@ -1,8 +1,8 @@
 # See the name for you IDE
-*.idea
+.idea
 # If you are using sqlite3
 *.sqlite3
 # Name of your virtuan env
-.env
+.venv
 *pyc
-.DB_Store
+.DS_Store
